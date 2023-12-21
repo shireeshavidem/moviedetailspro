@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>The input element</h1>
+
+<form method = 'POST'>
+{% csrf_token %}
+    <label for="moviename" >moviename:</label>
+    <input type="text" name="moviename" ><br><br>
+    <label for="budjet" >budjet:</label>
+    <input type="text" name="budjet" ><br><br>
+    <label for="director" >director:</label>
+    <input type="text" name="director" ><br><br>
+    <label for="hero" >hero:</label>
+    <input type="text" name="hero" ><br><br>
+    <label for="heroine" >heroine:</label>
+    <input type="text" name="heroine" ><br><br>
+    <input type="submit" value="Submit" >
+    </form>
+    {% for md in data%}
+    <div>
+        <p>{{md.id}}</p>
+        <p>moviename-{{md.moviename}}</p>
+        <p>budjet-{{md.budject}}</p>
+        <p>director-{{md.director}}</p>
+        <p>hero-{{md.hero}}</p>
+        <p>heroine-{{md.heroine}}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
